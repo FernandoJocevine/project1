@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Converter</title>
+</head>
+<body>
+    <p>
+        <label>Kilometer</label>
+        <input id="inputKilometer" type="number" placeholder="Kilometer" oninput="LengthConverter(this.value)"
+        onchange="LengthConverter(this.value)">
+    </p>
+    <p>Meter: <span id="outputMeter"></span></p>
+    <p>Centimeter: <span id="outputCm"></span></p>
+
+    <p>
+        <label>Meter</label>
+        <input id="inputMeter" type="number" placeholder="Meter" oninput="LengthConverterM(this.value)"
+        onchange="LengthConverterM(this.value)">
+    </p>
+    <p>Kilometer: <span id="outputKilometer"></span></p>
+    <p>Centimeter: <span id="outputCm2"></span></p>
+
+    <p>
+        <label>Centimeter</label>
+        <input id="inputCenti" type="number" placeholder="Centimeter" oninput="LengthConverterC(this.value)"
+        onchange="LengthConverterC(this.value)">
+    </p>
+    <p>Kilometer: <span id="outputKm"></span></p>
+    <p>Meter: <span id="outputM"></span></p>
+
+
+    <script>
+        function LengthConverter(valNum){
+        document.getElementById("outputMeter").innerHTML=valNum*1000;
+
+        document.getElementById("outputCm").innerHTML=valNum*100000;
+    }
+
+    function LengthConverterM(valNum){
+        document.getElementById("outputKilometer").innerHTML=valNum/1000;
+
+        document.getElementById("outputCm2").innerHTML=valNum/0.01;
+    }
+
+    function LengthConverterC(valNum){
+        document.getElementById("outputKm").innerHTML=valNum/100000;
+
+        document.getElementById("outputM").innerHTML=valNum/100;
+    }
+    </script>
+</body>
+</html>
